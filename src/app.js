@@ -17,6 +17,10 @@ app.set('views', './src/views');
 app.use(express.static('./src/public'));
 // app.use('/', routes);
 
+app.get('/login',(req,res)=>{
+    res.render('views/login')
+})
+
 connectDB()
 .then(()=>{
     app.listen(port, ()=>{

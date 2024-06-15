@@ -14,6 +14,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password"],
     },
+    reviews:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'review'
+        }
+    ]
 });
 
 export const User = mongoose.model("User", userSchema);
